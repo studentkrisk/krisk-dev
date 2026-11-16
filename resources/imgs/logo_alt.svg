@@ -1,0 +1,31 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+	<style>
+		.s0 { fill: #3377ff } 
+		.s1 { fill: #000000 } 
+	</style>
+	<g id="Folder 1">
+		<path id="Shape 1" fill-rule="evenodd" class="s0" d="m224 64c-17.7 0-32-14.3-32-32 0-17.7 14.3-32 32-32 17.7 0 32 14.3 32 32 0 17.7-14.3 32-32 32z"/>
+		<path id="Shape 1 copy" fill-rule="evenodd" class="s0" d="m32 64c-17.7 0-32-14.3-32-32 0-17.7 14.3-32 32-32 17.7 0 32 14.3 32 32 0 17.7-14.3 32-32 32z"/>
+		<path id="Shape 1 copy 2" fill-rule="evenodd" class="s0" d="m32 256c-17.7 0-32-14.3-32-32 0-17.7 14.3-32 32-32 17.7 0 32 14.3 32 32 0 17.7-14.3 32-32 32z"/>
+		<path id="Shape 1 copy 3" fill-rule="evenodd" class="s0" d="m224 256c-17.7 0-32-14.3-32-32 0-17.7 14.3-32 32-32 17.7 0 32 14.3 32 32 0 17.7-14.3 32-32 32z"/>
+		<path id="Shape 2" fill-rule="evenodd" class="s0" d="m224 0v257h-192v-257z"/>
+		<path id="Shape 3" fill-rule="evenodd" class="s0" d="m256 32v192h-256v-192z"/>
+	</g>
+	<g id="Folder 3">
+		<path id="Shape 17" fill-rule="evenodd" class="s1" d="m72 128c-30.97 0-56-25.03-56-56 0-30.97 25.03-56 56-56 30.97 0 56 25.03 56 56 0 30.97-25.03 56-56 56z"/>
+		<path id="Shape 21" fill-rule="evenodd" class="s1" d="m160 144v32h-80v-32z"/>
+		<path id="Shape 22" fill-rule="evenodd" class="s1" d="m160 176c-8.85 0-16-7.15-16-16 0-8.85 7.15-16 16-16 8.85 0 16 7.15 16 16 0 8.85-7.15 16-16 16z"/>
+		<path id="Shape 20" fill-rule="evenodd" class="s1" d="m128 72v120h-32v-120z"/>
+		<path id="Shape 19" fill-rule="evenodd" class="s1" d="m80 240c-26.54 0-48-21.46-48-48 0-26.54 21.46-48 48-48 26.54 0 48 21.46 48 48 0 26.54-21.46 48-48 48z"/>
+		<path id="Shape 18" fill-rule="evenodd" class="s1" d="m227 96v32h-155v-32z"/>
+	</g>
+	<path id="Shape 23" fill-rule="evenodd" class="s0" d="m72 96c-13.27 0-24-10.73-24-24 0-13.27 10.73-24 24-24 13.27 0 24 10.73 24 24 0 13.27-10.73 24-24 24z"/>
+	<path id="Shape 23 copy" fill-rule="evenodd" class="s0" d="m80 208c-8.85 0-16-7.15-16-16 0-8.85 7.15-16 16-16 8.85 0 16 7.15 16 16 0 8.85-7.15 16-16 16z"/>
+	<g id="Folder 2">
+		<path id="Shape 4" fill-rule="evenodd" class="s1" d="m224 240c-8.85 0-16-7.15-16-16 0-8.85 7.15-16 16-16 8.85 0 16 7.15 16 16 0 8.85-7.15 16-16 16z"/>
+		<path id="Shape 13" fill-rule="evenodd" class="s1" d="m240 32v192h-32v-192z"/>
+		<path id="Shape 16" fill-rule="evenodd" class="s1" d="m224 16v32h-80v-32z"/>
+		<path id="Shape 14" fill-rule="evenodd" class="s1" d="m224 48c-8.85 0-16-7.15-16-16 0-8.85 7.15-16 16-16 8.85 0 16 7.15 16 16 0 8.85-7.15 16-16 16z"/>
+		<path id="Shape 15" fill-rule="evenodd" class="s1" d="m144 48c-8.85 0-16-7.15-16-16 0-8.85 7.15-16 16-16 8.85 0 16 7.15 16 16 0 8.85-7.15 16-16 16z"/>
+	</g>
+</svg>

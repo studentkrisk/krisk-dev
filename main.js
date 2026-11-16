@@ -46,23 +46,25 @@ onload = () => {
   }
 
   const node_ids = [
-    {"id": "website", "tags": ["web", "3d"]},
-    {"id": "trail", "tags": ["hackclub"]},
-    {"id": "blot", "tags": ["hackclub", "3d"]},
-    {"id": "quicklearn", "tags": ["math"]},
-    {"id": "lambda", "tags": ["math"]},
-    {"id": "controller-instrument", "tags": ["bodge", "music"]},
-    {"id": "hack-hour-clock", "tags": ["electronics", "hackclub"]},
-    {"id": "circuits", "tags": ["math"]},
-    {"id": "domino", "tags": ["bodge"]},
-    {"id": "planet-sim", "tags": ["bodge"]},
-    {"id": "xkcd-guessr", "tags": ["web", "bodge"]},
-    {"id": "desmos3d", "tags": ["3d", "math"]}
+    {"id": "website", "tags": ["web", "3d"], "desc": "my portfolio (and the website you're currently on!). made with html, jquery, js, and css!", "link": "https://studentkrisk.github.io"},
+    {"id": "trail", "tags": ["hackclub"], "desc": "a pcb that creates a simulacrum of the internet to message others, made for hackclub's trail hackathon. i designed the networking! made with micropython.", "link": "https://trail.hackclub.com"},
+    {"id": "blot", "tags": ["hackclub", "3d"], "desc": "a 3d renderer for a pen plotter, with shading and hidden surface removal, made for hackclub. made with js!", "link": "https://blot.hackclub.com/editor?src=https://raw.githubusercontent.com/hackclub/blot/main/art/knight-krisk/index.js"},
+    {"id": "quicklearn", "tags": ["math"], "desc": "an app to practice mental arithmetic and calculus. made with swift. still in progress!", "link": ""},
+    {"id": "lambda", "tags": ["math"], "desc": "a lambda calculus interpreter, made for a programming language jam. made with python!", "link": "https://github.com/studentkrisk/lambda"},
+    {"id": "controller instrument", "tags": ["bodge", "music"], "desc": "a small program to turn a xbox or ps3 controller into an instrument. made with python!", "link": "https://github.com/studentkrisk/controller-instrument"},
+    {"id": "hack hour clock", "tags": ["electronics", "hackclub"], "desc": "a clock that records how many hours i've programmed for. made with micropython!", "link": "https://github.com/studentkrisk/hackhourclock/tree/main"},
+    {"id": "circuits", "tags": ["math"], "desc": "a research project to improve factoring efficiency. made in python!", "link": "https://link.springer.com/chapter/10.1007/978-3-642-03816-7_15"},
+    {"id": "domino", "tags": ["bodge", "godot"], "desc": "a small godot project to simulate dominos! made in godot.", "link": ""},
+    {"id": "planet sim", "tags": ["bodge", "godot"], "desc": "a small godot project to simulate gravity, and eventually the atmosphere! made in godot. still in progress.", "link": "https://github.com/studentkrisk/planet-sim"},
+    {"id": "xkcd guessr", "tags": ["web", "bodge"], "desc": "a quick website that makes geoguessr for xkcd comics. made in svelte!", "link": "https://github.com/studentkrisk/xkcd-guessr"},
+    {"id": "desmos3d", "tags": ["3d", "math"], "desc": "a 3d renderer for desmos (before desmos3d came out). made with math!", "link": "https://www.desmos.com/calculator/53p5gdfgqh"}
   ]
 
   let nodes = [{
     "id": node_ids[0].id,
     "tags": node_ids[0].tags,
+    "desc": node_ids[0].desc,
+    "link": node_ids[0].link,
     "x": 0,
     "y": 0,
     "z": 0,
@@ -77,6 +79,8 @@ onload = () => {
     nodes.push({
       "id": i.id,
       "tags": i.tags,
+      "desc": i.desc,
+      "link": i.link,
       "x": 0/0,
       "y": 0/0,
       "z": 0/0,
@@ -152,6 +156,8 @@ onload = () => {
 
     for (let i = 0; i < boxes.length; i++) {
       boxes[i].position.set(nodes[i].x, nodes[i].y, nodes[i].z)
+      boxes[i].rotation.x -= 0.005;
+      boxes[i].rotation.y -= 0.01;
     }
 
     for (let i = 0; i < lines.length; i++) {
@@ -159,8 +165,6 @@ onload = () => {
       lines[i].geometry.setFromPoints([new THREE.Vector3(l.source.x, l.source.y, l.source.z), new THREE.Vector3(l.target.x, l.target.y, l.target.z)])
     }
 
-    boxes[0].rotation.x -= 0.005;
-    boxes[0].rotation.y -= 0.01;
     controls.update()
     renderer.render(scene, camera);
 
@@ -173,8 +177,10 @@ onload = () => {
       controls.target.lerp(box.position, (++counter)/10)
       if (counter >= 10) clearInterval(interval)
     }, 25)
-    $("#info-card-header").html(nodes[current].id)
+    if (nodes[current].link != "") $("#info-card-header").html(`<a target="_blank" href="${nodes[current].link}">${nodes[current].id}</a>`)
+    else $("#info-card-header").html(nodes[current].id)
     $("#info-card-next").html("")
+    $("#info-card-text").html(nodes[current].desc)
     for (let n = 0; n < nodes.length; n++) {
       let node = nodes[n]
       if (node != nodes[current] && node.tags.some(r => nodes[current].tags.includes(r))) {
